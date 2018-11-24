@@ -37,35 +37,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 var instock = [];
                 for (var index = 0; index < h._highlightResult.ingredients.length; index++) {
-                    if(h._highlightResult.ingredients[index].text.matchLevel != "none") {
-                            instock.push(h._highlightResult.ingredients[index].text.value);        
-                        }
-                        }    
+                    if(h._highlightResult.ingredients[index].matchLevel != "none") {
+                            instock.push(h._highlightResult.ingredients[index].value);        
+                    }
+                }    
                 // print out ingredients in stock if present:
                 if(instock.length > 0) {      
                     mystring += '<u>In Stock:</u><ul>';  
                     for (index = 0; index < instock.length; index++) {
-                    mystring += '<li>' + instock[index] + '</li>';
+                        mystring += '<li>' + instock[index] + '</li>';
                     }        
                     mystring += '</ul>';
-                        }
-
+                }
+                
                         
                 
                 var tobuy = [];
                 for (var index = 0; index < h._highlightResult.ingredients.length; index++) {
-                    if(h._highlightResult.ingredients[index].text.matchLevel == "none") {
-                            tobuy.push(h._highlightResult.ingredients[index].text.value);        
+                    if(h._highlightResult.ingredients[index].matchLevel == "none") {
+                            tobuy.push(h._highlightResult.ingredients[index].value);        
                     }
-                        }    
+                }    
                 // print out ingredients to buy if present:      
                 if(tobuy.length > 0) {      
                     mystring += '<u>To Buy:</u><ul>';  
                     for (index = 0; index < tobuy.length; index++) {
-                    mystring += '<li>' + tobuy[index] + '</li>';
+                        mystring += '<li>' + tobuy[index] + '</li>';
                     }        
-                mystring += '</ul>';
-                        }
+                    mystring += '</ul>';
+                }
 
                 
                 
@@ -77,15 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(h.healthLabels.length > 0) {      
                     mystring += '<br/><br/><u>Labels:</u> ';  
                     for (index = 0; index < h._highlightResult.healthLabels.length; index++) {
-                    mystring += '#' + h._highlightResult.healthLabels[index].value;
-                    if(index+1 < h._highlightResult.healthLabels.length) {
-                        mystring +=  ', ';
-                    } else {
-                        mystring +=  '.';
-                    }
+                        mystring += '#' + h._highlightResult.healthLabels[index].value;
+                        if(index+1 < h._highlightResult.healthLabels.length) {
+                            mystring +=  ', ';
+                        } else {
+                            mystring +=  '.';
+                        }
                     }        
                     mystring += '</ul>';
-                        }
+                }
                 
                 // dev only:
                 // mystring += '<br/><i>' + JSON.stringify(h) + '</i>';
