@@ -12,19 +12,23 @@ nav {
 
 #bon-app-menu {
   background: #EEA200;
-}
-
-.link {
-  transition: 0.3s ease;
-  background: #EEA200;
   color: #ffffff;
   font-size: 20px;
   text-decoration: none;
+
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s ease;
+  background: #EEA200;
   border-top: 4px solid #EEA200;
   border-bottom: 4px solid #EEA200;
   padding: 20px 0;
   margin: 0 20px;
 }
+
 .link:hover {
   border-top: 4px solid #ffffff;
   border-bottom: 4px solid #ffffff;
