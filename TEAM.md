@@ -1,6 +1,9 @@
 # Team
 
 
-Weiqiang Liu, liuwqiang@gmail.com, 076 404 09 96
+Weiqiang Liu
 
-Didi Rordorf, drordorf@gmail.com, 076 561 41 83
+Didi Rordorf, drordorf@gmail.com
+
+David Zimmerli, zimmi_91@hotmail.com
+
