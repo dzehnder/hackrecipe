@@ -7,6 +7,7 @@ nav {
   padding: 24px;
   text-align: center;
   font-family: Roboto;
+  font-weight: 100;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 body, html {
@@ -58,16 +59,16 @@ body, html {
 /* Position text in the middle of the page/image */
 .hero-text {
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  background-color: rgba(0,0,0, 0.25); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
-  border: 3px solid #f1f1f1;
+  border: 7px solid #f1f1f1;
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   /*z-index: 2;*/
-  width: 80%;
+  width: 45%;
   padding: 20px;
   text-align: center;
 }
