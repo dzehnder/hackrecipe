@@ -10,5 +10,4 @@ class Menu (){
 		</ul>\
 	</div>\
 </div>';
-	$("body").append(menu);
 }
