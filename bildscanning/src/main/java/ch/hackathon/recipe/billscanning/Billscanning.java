@@ -68,7 +68,11 @@ public class Billscanning {
                     return;
                 }
 
-                System.out.println(res.getTextAnnotationsList().toString());
+                String[] finalResult = res.getTextAnnotationsList().get(0).getDescription().split("\n");
+
+                for (String item : finalResult) {
+                    System.out.println(item);
+                }
 
             }
         } catch (IOException e) {
