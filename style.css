@@ -5,3 +5,7 @@ em {
   font-style: normal;
   text-decoration: underline;
 }
+
+#bon-app-search-result {
+  display: none;
+}
