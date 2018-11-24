@@ -6,14 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bon'app</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
-    <script src="script.js"></script>
+    <script src="pizza.js"></script>
 </head>
 <body>
+    <div id="bon-app-menu">      
+        <div id="bon-app-page-list">
+            <nav>
+                <label>Search for ingredients:
+                    <input id="search-box" />
+                </label>  
+              <a class="link" href="#home">Home</a>
+              <a class="link" href="#recipes">Recipes</a>
+              <a class="link" href="#scan">Scan Bill</a>
+              <a class="link" href="#about">About</a>
+            </nav>
+            <p> or </p>
+            <div class="round-button">
+                <div class="round-button-circle">
+                    <a href="http://example.com" class="round-button">Button!!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bon-app-search-result">
+    </div>
 
-    <button id="find-recipe"> find recipe </button>
+    <canvas id="pizza"></canvas>
 
-    <div id="bon-app-search-result"></div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const pizza = new PizzaAnimation('pizza');
+
+        (function update() {
+        requestAnimationFrame(update);
+        pizza.update();
+        }())
+    });
+    </script>
     
 </body>
 </html>
