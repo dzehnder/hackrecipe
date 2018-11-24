@@ -25,26 +25,27 @@ import java.util.List;
 
 public class Billscanning {
 
-    public static void main(String... args) throws Exception {
+    public String[] scannerHits;
+
+    public Billscanning() {
+
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         URL json = classloader.getResource("dienst-code.json");
-        authExplicit(json.getPath());
+        try {
+            authExplicit(json.getPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         URL receipt = classloader.getResource("receipt.jpg");
 
-        detectImageGcs(receipt.getPath());
-
-    }
-
-
-    public static void detectImageGcs(String imageSrcPath) {
         // Instantiates a client
         try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
 
             // The path to the image file to annotate
 
             // Reads the image file into memory
-            Path path = Paths.get(imageSrcPath);
+            Path path = Paths.get(receipt.getPath());
             byte[] data = Files.readAllBytes(path);
             ByteString imgBytes = ByteString.copyFrom(data);
 
@@ -68,11 +69,9 @@ public class Billscanning {
                     return;
                 }
 
-                String[] finalResult = res.getTextAnnotationsList().get(0).getDescription().split("\n");
+                scannerHits = res.getTextAnnotationsList().get(0).getDescription().split("\n");
 
-                for (String item : finalResult) {
-                    System.out.println(item);
-                }
+
 
             }
         } catch (IOException e) {
@@ -80,7 +79,7 @@ public class Billscanning {
         }
     }
 
-    static void authExplicit(String jsonPath) throws IOException {
+    private void authExplicit(String jsonPath) throws IOException {
         // You can specify a credential file by providing a path to GoogleCredentials.
         // Otherwise credentials are read from the GOOGLE_APPLICATION_CREDENTIALS environment variable.
         GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath))
