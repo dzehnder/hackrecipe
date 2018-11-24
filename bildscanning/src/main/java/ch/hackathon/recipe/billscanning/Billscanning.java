@@ -23,6 +23,7 @@ import com.google.protobuf.util.JsonFormat;
 import com.google.cloud.storage.StorageOptions;
 import io.grpc.Context;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ import java.util.regex.Pattern;
 public class Billscanning {
 
     public static void main(String... args) throws Exception {
+        File image = new File("receipt.pdf");
         detectDocumentsGcs("receipt.pdf", "out.pdf");
 
     }
@@ -52,16 +54,13 @@ public class Billscanning {
         try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
             List<AsyncAnnotateFileRequest> requests = new ArrayList<>();
 
-            // Set the GCS source path for the remote file.
-            GcsSource gcsSource = GcsSource.newBuilder()
-                    .setUri(gcsSourcePath)
-                    .build();
+
 
             // Create the configuration with the specified MIME (Multipurpose Internet Mail Extensions)
             // types
             InputConfig inputConfig = InputConfig.newBuilder()
                     .setMimeType("application/pdf") // Supported MimeTypes: "application/pdf", "image/tiff"
-                    .setGcsSource(gcsSource)
+                    .se(gcsSource)
                     .build();
 
             // Set the GCS destination path for where to save the results.
