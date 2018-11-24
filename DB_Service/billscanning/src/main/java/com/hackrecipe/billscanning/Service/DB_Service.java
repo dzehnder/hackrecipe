@@ -1,23 +1,24 @@
-package baselhack;
-
-import com.algolia.search.APIClient;
-import com.algolia.search.ApacheAPIClientBuilder;
-import com.algolia.search.Index;
-import com.algolia.search.exceptions.AlgoliaException;
-import com.algolia.search.objects.Query;
-import org.springframework.stereotype.Service;
+package com.hackrecipe.billscanning.Service;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import com.algolia.search.*;
+import com.algolia.search.exceptions.AlgoliaException;
+import com.algolia.search.objects.Query;
+import com.hackrecipe.billscanning.model.Ingredient;
+import com.hackrecipe.billscanning.model.IngredientStock;
+import org.springframework.stereotype.Service;
+
 @Service
-public class Main {
+public class DB_Service {
 
 	private static Map<String, Integer> ingredientMap = new HashMap<String, Integer>();
 	private static APIClient client =  new ApacheAPIClientBuilder("ZV6V83N86C", "dcb2605958712d4d75acf4b30c6896d3").build();
 	private static Index<Ingredient> indexIngredient = client.initIndex("ingredients", Ingredient.class);
+	private static Index<IngredientStock> indexStock = client.initIndex("stock", IngredientStock.class);
 	
 	public static void main(String[] args) {
 		
@@ -55,9 +56,19 @@ public class Main {
 			}
 		}
 	}
+
+	public String getStock(){
+	    try {
+           String string = indexStock.search(new Query("").setAttributesToRetrieve(Arrays.asList("text"))).toString();
+           return string;
+        }catch (AlgoliaException e){
+	        e.printStackTrace();
+        }
+        return "";
+    }
 	
 	private static void updateStock(){
-		Index<IngredientStock> indexStock = client.initIndex("stock", IngredientStock.class);
+
 		
 		Iterator<String> it = ingredientMap.keySet().iterator();
 		while (it.hasNext()) {
