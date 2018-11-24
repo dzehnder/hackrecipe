@@ -1,5 +1,11 @@
+@import url(https://fonts.google.com/specimen/Roboto?selection.family=Roboto);
 * {
     box-sizing: border-box;
+    font-family: Roboto;
+}
+
+.bon-app-search-result:{
+	font-family: Roboto;
 }
 #recipe-proposal {
     /* Create two equal columns that floats next to each other */
@@ -29,4 +35,11 @@ hr {
 
 h3 {
 	text-align: center;
+}
+
+img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }

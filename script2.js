@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 
                 if(h.imageUrl) {      
-                    mystring += '<img src="' + h.imageUrl + '" />"</h3>';
+                    mystring += '<img src="' + h.imageUrl + '" /></h3>';
                     mystring += '<br />';      
                 }      
 
