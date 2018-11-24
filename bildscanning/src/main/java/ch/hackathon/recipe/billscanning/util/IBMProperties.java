@@ -1,4 +1,4 @@
-package com.prodyna.NewsHandler.utilities;
+package ch.hackathon.recipe.billscanning.util;
 
 import java.io.IOException;
 import java.io.InputStream;
