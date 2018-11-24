@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const results = opts.results;
             // read the hits from the results and transform them into HTML.
             document.querySelector('#bon-app-search-result').innerHTML = results.hits.map(function(h) {
-                var mystring = '<p>';
+                var mystring = '<div id="recipe-proposal"><p>';
                 mystring += '<h3>' + h._highlightResult.name.value + '</h3>';
                 
                 
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // dev only:
                 // mystring += '<br/><i>' + JSON.stringify(h) + '</i>';
                 
-                mystring += '</p><hr/>';
+                mystring += '</p></div><hr/>';
                 
                 return mystring;
             }).join('');

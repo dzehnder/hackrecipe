@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+#recipe-proposal {
+    /* Create two equal columns that floats next to each other */
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: relative; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.bon-app-search-result:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    #recipe-proposal {
+        width: 100%;
+    }
+}
+
+hr {
+	display: none;
+}
+
+h3 {
+	text-align: center;
+}
