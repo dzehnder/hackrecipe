@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "billscanning-223510",
+  "private_key_id": "bd38e5f89cc136956a775de7f7222c0478b5743c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCMLokE4lEyGOFd\nrEKfbcX79zvKO5UbE6Peu11uVomznjcIetdg1CWYFHFk35Y7ZMacXdJACHYniTbN\nLWggTwk8uK7NFZqjFkrJLO7sy7KhcZ2HmXUu3euPIrKKjvwBSauxXMYx+LtKZ6pg\nPHfxWQvTuyRWITzLG+30XMly59ywJBkwg5e+c+BJ8L+rIqc4kpbvrj2wJTO008EA\nkxpFF+Cvz07IklzdBbIIVOrZrRgNvWIABBPrVKAKifOAOt9uuKng5ooN9DgLNf4m\n05eWw7FZAsdPnwl+4zkNcXXbqT39nzLMZNuJobxGQaO7gUWk8qnbaLMjNxG+h8t1\nv0FOOhbtAgMBAAECggEAE63XueoMlIAWKTiMzMVUESxyxg/pvXibHWJHujznTWIl\nXykhkbwOgAREq/DQbguWby6jnK4jaiby3MhmUPzPcukJTwycng771jSa4P6yl8Pz\npazXHMp2LmykTFvIyGR/eCFqSGse3dHiQurSOr0xshpYPkghuPC1jcO12w3uNwLR\nHoS2157TRXeOUOGByrh2dZ3F0gBABBKKfvovAV851/fSkVB66b7IZZkCKzw2B2Tn\nCXwkERx9ANeRy5p0VBgD7XgOdZ2ncRnrq0wX531STP/zYCA6wFMoWQQ5E3+YRHig\n2orvch1MUOYc0cv7q6YAJK6/3z22QqJWrX/vc31+kQKBgQC/cKTl0xg58TPY569k\nPvLSA58ymePzmEBsKCd3qsCvsuhPBdttNzTs2rkkXl/49ulH5j6Fr4TXyAfGoy0/\n1Syok0in0aFt89TJlPuIWgZ7sBxXKXgFZP88Y4gWD1rX/7yMp9Lmn5MgG8dJFrL6\nqfEswFXlOo9WDdwsdcM/FaCIPQKBgQC7dK00Xn6bvncUbTXm5tW9CAtp8yTx1Hp+\n04vH5rUt6GW8SY4IlHQ55tu3q/ph5t3ULcJeP7EWde18nO/L7JiPiGXvmdWPVoaz\nDPa5cUfsukNbdzm9KnhVOhYroFnz0pP/pS2AKGZfgFBqTEyHxnIqjMOHSAuJHzJi\naGccGAEEcQKBgFxeOGHfcW/7jj2YxAqFSNnF/5kFoXPWQTcuRKS7kY70rpv6Qn42\nxeWGPxBqLLpOQA597CrKnjkS/ZV9BAcpjwujTMoUHmST4laE+Lw4W6pwNaxkiNFp\ngrEbgPzL2dQgQ1RGYT7/PZifbo84UZEaUBB8mLUqhSBLPbGB/HvCrpstAoGALTuc\nR9S9bEtrZIxtw0fUL4bvaiN3uLryzAOz6QqskWVQlzyQf1WDLi2cuxdOla0lvftE\nuYVY7/iI09byrhxrO8dIAab3N11Dp5TrPBgvqNnRQxLj5deHrdkUXHaW/hTEDZ4H\n+rLE8Sp/PQcoOGMUTVwmGlCyJ+ZVPBXBO7A3HqECgYB//5plWizh5FJOut7fG8f+\nhUyjcZXntLWQlkPDQxYiZ+AEYOA2w6hwyA49bLLmuTEkX4knLHv9xt6+HEC3HR8y\nPvo/MnzW917n7/EPG62xoVSqch7HE20iB8jXrLu90PQtwARheDolgGJlTaF6tYjk\n9d4AMQkj8KwLGfFaiEpsKw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "billscanning@billscanning-223510.iam.gserviceaccount.com",
+  "client_id": "104022602472029180636",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/billscanning%40billscanning-223510.iam.gserviceaccount.com"
+}
