@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     search.addWidget({
         init: function(opts) {
             const helper = opts.helper;
-            const input = document.querySelector('#search-box');
+            const input = document.querySelector('#find-recipe');
             input.addEventListener('input', function(e) {
-                helper.setQuery(e.currentTarget.value).search();
+                //helper.setQuery(e.currentTarget.value).search();
+                helper.setQuery('pepper,chicken').search();
             });
         }
     });
