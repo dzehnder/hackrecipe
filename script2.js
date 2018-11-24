@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 var instock = [];
                 for (var index = 0; index < h._highlightResult.ingredients.length; index++) {
-                    if(h._highlightResult.ingredients[index].text.matchLevel != "none") {
-                            instock.push(h._highlightResult.ingredients[index].text.value);        
+                    if(h._highlightResult.ingredients[index].matchedWords != "none") {
+                            instock.push(h._highlightResult.ingredients[index].value);        
                         }
                         }    
                 // print out ingredients in stock if present:
@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 var tobuy = [];
                 for (var index = 0; index < h._highlightResult.ingredients.length; index++) {
-                    if(h._highlightResult.ingredients[index].text.matchLevel == "none") {
-                            tobuy.push(h._highlightResult.ingredients[index].text.value);        
+                    if(h._highlightResult.ingredients[index].matchedWords == "none") {
+                            tobuy.push(h._highlightResult.ingredients[index].value);        
                     }
                         }    
                 // print out ingredients to buy if present:      

@@ -1,17 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.google.com/specimen/Roboto?selection.family=Roboto);
 body {
   margin: 0px;
 }
 nav {
-  margin-top: 40px;
+  /*margin-top: 40px;*/
   padding: 24px;
   text-align: center;
-  font-family: Raleway;
+  font-family: Roboto;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
-
+body, html {
+    height: 100%;
+}
 #bon-app-menu {
-  background: #EEA200;
+  background: rgb(236 ,96, 88) ;
   color: #ffffff;
   font-size: 20px;
   text-decoration: none;
@@ -22,9 +24,9 @@ nav {
   color: #ffffff;
   text-decoration: none;
   transition: 0.3s ease;
-  background: #EEA200;
-  border-top: 4px solid #EEA200;
-  border-bottom: 4px solid #EEA200;
+  background:rgb(236 ,96, 88);
+  border-top: 4px solid rgb(236 ,96, 88);
+  border-bottom: 4px solid rgb(236 ,96, 88);
   padding: 20px 0;
   margin: 0 20px;
 }
@@ -33,4 +35,39 @@ nav {
   border-top: 4px solid #ffffff;
   border-bottom: 4px solid #ffffff;
   padding: 6px 0; 
+}
+
+/* The hero image */
+.bon-app-title-screen {
+      /* The image used */
+    background-image: url("images/ingredients_2.jpg");
+
+/* Add the blur effect */
+
+  /* Full height */
+  height: 40%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+ 
+/* Position text in the middle of the page/image */
+.hero-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*z-index: 2;*/
+  width: 80%;
+  padding: 20px;
+  text-align: center;
 }
