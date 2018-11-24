@@ -9,6 +9,6 @@ class Menu (){
 		  <li><a href="#about">About</a></li>\
 		</ul>\
 	</div>\
-</div>"
+</div>';
 	$("body").append(menu);
 }
