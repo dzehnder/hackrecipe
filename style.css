@@ -34,7 +34,7 @@ em {
 
 .option-content-box-text {
   color: black;
-  border: 3px solid white;
+  border: 3px solid rgba(236 ,96, 88,0.4);
   /*margin: 25%;*/
   height: 5em;
   width: 25%;

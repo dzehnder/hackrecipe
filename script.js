@@ -1,3 +1,5 @@
+var app = angular.module("hackrecipe", []); 
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const search = instantsearch({
@@ -5,28 +7,52 @@ document.addEventListener('DOMContentLoaded', () => {
         apiKey: 'dcb2605958712d4d75acf4b30c6896d3',
         indexName: 'recipes',
     });
-      
+
+    const headers = new Headers();
+    headers.append('X-Algolia-API-Key', 'dcb2605958712d4d75acf4b30c6896d3');
+    headers.append('X-Algolia-Application-Id', 'ZV6V83N86C');
+
+    const STOCK_URL = 'https://ZV6V83N86C.algolia.net/1/indexes/stock/';
+
     search.addWidget({
         init: function(opts) {
             const helper = opts.helper;
-            const searchForRecipesElement = document.querySelector('#search-box');
+            const searchForRecipesElements = document.querySelectorAll('.search-box');
             const whatsInTheFridgeElement = document.querySelector('#leftover-button');
             const searchResultElement = document.querySelector("#bon-app-search-result");
 
             if (whatsInTheFridgeElement) {
                 whatsInTheFridgeElement.addEventListener('click', function(e) {
-                    helper.setQuery('pepper kosher chicken').search();
-                    searchResultElement.style.display = "block";
+                    
+                    // 1. Fetch stock
+                    // 2. Query recipe database
+                    // 3. Show results
+
+                    fetch(STOCK_URL, {
+                        headers: headers
+                    }).then(function(response) {
+                        return response.json();
+                    }).then(function(results) {
+                        const stockAsText = results.hits.map(function(hit) {
+                            return hit.text;
+                        }).join(' ');
+
+                        helper.setQuery(stockAsText).search();
+                        searchResultElement.style.display = "block";
+                    });
                 });
             }
-            if (searchForRecipesElement) {
-                searchForRecipesElement.addEventListener('input', function(e) {
-                    helper.setQuery(e.currentTarget.value).search();
-                    if (searchForRecipesElement.value != '') {
-                        searchResultElement.style.display = "block";
-                    } else {
-                        searchResultElement.style.display = "none";
-                    }
+            if (searchForRecipesElements) {
+
+                searchForRecipesElements.forEach(function(el) {
+                    el.addEventListener('input', function(e) {
+                        helper.setQuery(e.currentTarget.value).search();
+                        if (el.value != '') {
+                            searchResultElement.style.display = "block";
+                        } else {
+                            searchResultElement.style.display = "none";
+                        }
+                    });
                 });
             }
         }
@@ -51,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 var instock = [];
                 for (var index = 0; index < h._highlightResult.ingredients.length; index++) {
-                    if(h._highlightResult.ingredients[index].matchedWords != "none") {
+                    if(h._highlightResult.ingredients[index].matchLevel != "none") {
                             instock.push(h._highlightResult.ingredients[index].value);        
                         }
                         }    
@@ -68,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 var tobuy = [];
                 for (var index = 0; index < h._highlightResult.ingredients.length; index++) {
-                    if(h._highlightResult.ingredients[index].matchedWords == "none") {
+                    if(h._highlightResult.ingredients[index].matchLevel == "none") {
                             tobuy.push(h._highlightResult.ingredients[index].value);        
                     }
                         }    

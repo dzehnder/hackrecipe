@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="leftover-button.css">
     <link rel="stylesheet" href="search-results.css">
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="script.js"></script>
 </head>
-<body>
+<body ng-app="hackrecipe" ng-cloak>
     <div class="bon-app-menu-sticky">
         <div class="bon-app-page-list">
             <label class="search">Search for ingredients:
                 <button class="search-button"> </button>
-                <input class="search-box">
+                <input class="search-box" ng-model="searchquery">
             </label>
         </div>
     </div>
@@ -39,7 +40,8 @@
 
             <div class="option-content-box-text">
                 <a class="scan" href="#">
-                    <img src="images/scan.png">
+                    SCAN
+                    <!--<img src="images/scan.png">-->
                 </a>
             </div>
 
@@ -55,7 +57,18 @@
                 <button href="#" id="leftover-button">What's in the fridge?</button>
             </div>
             </div>
-
+<!--
+=======
+        <a class="link" href="#scan">SCAN BILL</a>
+        <p> or </p>
+        <label id="search">Search for ingredients:
+            <input class="search-box" ng-model="searchquery">
+        </label>
+        <p> or </p>
+        <div class="leftover-button-container">
+            <button href="#" id="leftover-button">What's in the fridge?</button>
+>>>>>>> 621f00d1414b4b14a338aa97d7e9dd6a0aa5b4cd
+-->
         </div>
 
 
