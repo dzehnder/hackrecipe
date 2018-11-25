@@ -1,18 +1,28 @@
 @import url(https://fonts.google.com/specimen/Roboto?selection.family=Roboto);
 * {
     box-sizing: border-box;
-    font-family: Roboto;
 }
 
-.bon-app-search-result:{
-	font-family: Roboto;
+div#bon-app-search-result {
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.bon-app-body {
+  	background-color: rgb(252	243	230	);
+  	overflow:hidden;
+  	text-align: center;
+
 }
 #recipe-proposal {
-    /* Create two equal columns that floats next to each other */
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: relative; /* Should be removed. Only for demonstration */
+  color: white;
+  font-weight: bold;
+  background-color: rgb(236 ,96, 88);
+  border: 7px solid rgb(252	243	230	);
+  float: left;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
 }
 
 /* Clear floats after the columns */
@@ -42,4 +52,9 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+    background-color: pink;
+}
+
+li {
+	list-style-type: disc;
 }
