@@ -21,13 +21,27 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Billscanning {
 
-    public String[] scannerHits;
+    public Map<String, Integer> ingredients = new HashMap<>();
 
     public Billscanning() {
+        ingredients.put("Whole Wheat Bread", 2);
+        ingredients.put("Cereal", 1);
+        ingredients.put("Kidney Beans", 3);
+        ingredients.put("Apples", 3);
+        ingredients.put("Avocado", 2);
+        ingredients.put("Berry Medley", 1);
+        ingredients.put("Butter", 2);
+        ingredients.put("Milk", 2);
+        ingredients.put("Nonfat Yogurt", 2);
+        ingredients.put("Olive Oil", 1);
 
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         URL json = classloader.getResource("dienst-code.json");
@@ -63,14 +77,28 @@ public class Billscanning {
             BatchAnnotateImagesResponse response = vision.batchAnnotateImages(requests);
             List<AnnotateImageResponse> responses = response.getResponsesList();
 
+            String[] scannerHits = new String[0];
             for (AnnotateImageResponse res : responses) {
                 if (res.hasError()) {
                     System.out.printf("Error: %s\n", res.getError().getMessage());
                     return;
                 }
 
+
                 scannerHits = res.getTextAnnotationsList().get(0).getDescription().split("\n");
 
+            }
+
+            String ingredientRegex = "(\\d) (\\w+.)+";
+            Pattern regexPattern = Pattern.compile("(\\d)|\\S(.\\w+.)+");
+
+            for (String ingredient : scannerHits) {
+                if (ingredient.matches(ingredientRegex)) {
+                    Matcher regexMatcher = regexPattern.matcher(ingredient);
+                    if (regexMatcher.find()) {
+                        regexMatcher.groupCount();
+                    }
+                }
 
 
             }
