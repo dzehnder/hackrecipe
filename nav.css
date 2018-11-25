@@ -12,12 +12,28 @@ nav {
 body, html {
     height: 100%;
 }
-#bon-app-menu {
+.bon-app-menu {
   background: rgb(236 ,96, 88) ;
   color: #ffffff;
   font-size: 20px;
   text-decoration: none;
+  width: 100%;
+  position: fixed;
+  bottom: auto;
+  top: 0;
 
+}
+
+.bon-app-title-screen-package {
+  position: relative;
+  height: 40%;
+}
+
+.bon-app-title-screen-package .bon-app-menu {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  top: auto;
 }
 
 .link {
@@ -45,12 +61,13 @@ body, html {
 /* Add the blur effect */
 
   /* Full height */
-  height: 40%; 
+  height: 40%;
 
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
  
@@ -69,4 +86,8 @@ body, html {
   width: 45%;
   padding: 20px;
   text-align: center;
+}
+
+.bon-app-body {
+  height: 2000px;
 }
