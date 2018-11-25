@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -28,8 +29,8 @@ public class StockResource {
     }
 
     @RequestMapping(value = "/stock", method = RequestMethod.GET)
-    public ResponseEntity<String> getStock (){
-        String stock = db_service.getStock();
+    public ResponseEntity<List<String>> getStock (){
+        List<String> stock = db_service.getStock();
         return new ResponseEntity<>(stock, HttpStatus.OK);
     }
 }

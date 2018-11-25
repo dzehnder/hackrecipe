@@ -95,14 +95,12 @@ public class DB_Service {
     }
 
 
-    public String getStock() {
-        try {
-            String string = indexStockUpd.search(new Query("").setAttributesToRetrieve(Arrays.asList("text"))).toString();
-            return string;
-        } catch (AlgoliaException e) {
-            e.printStackTrace();
+    public List<String> getStock() {
+        List<String> ingredientList = new ArrayList<>();
+        for (IngredientStockGen ingredientStockGen : indexStockGen.browse(new Query(""))){
+            ingredientList.add(ingredientStockGen.getText());
         }
-        return "";
+        return ingredientList;
     }
 
 }
