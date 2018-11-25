@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     search.addWidget({
         init: function(opts) {
             const helper = opts.helper;
-            const searchForRecipesElement = document.querySelector('#search-box');
+            const searchForRecipesElements = document.querySelectorAll('.search-box');
             const whatsInTheFridgeElement = document.querySelector('#leftover-button');
             const searchResultElement = document.querySelector("#bon-app-search-result");
 
@@ -40,14 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 });
             }
-            if (searchForRecipesElement) {
-                searchForRecipesElement.addEventListener('input', function(e) {
-                    helper.setQuery(e.currentTarget.value).search();
-                    if (searchForRecipesElement.value != '') {
-                        searchResultElement.style.display = "block";
-                    } else {
-                        searchResultElement.style.display = "none";
-                    }
+            if (searchForRecipesElements) {
+
+                searchForRecipesElements.forEach(function(el) {
+                    el.addEventListener('input', function(e) {
+                        helper.setQuery(e.currentTarget.value).search();
+                        if (el.value != '') {
+                            searchResultElement.style.display = "block";
+                        } else {
+                            searchResultElement.style.display = "none";
+                        }
+                    });
                 });
             }
         }
