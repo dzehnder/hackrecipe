@@ -35,6 +35,32 @@
 
     </div>
     <div class="bon-app-body">
+
+        <div id="">
+
+            <div class="option-content-box-text">
+                SCAN
+                <form method="POST" enctype="multipart/form-data" action="http://localhost:8080/upload">
+                    <input type="button" id="ScanBill" value="Scan the bill" onclick="document.getElementById('file').click();" />
+                    <input type="file" accept="image/*;capture=camera" style="display:none;" id="file" name="file"/>
+                    <input id="scannerUpload" type="submit" value="Upload"/>
+                </form>
+            </div>
+
+            <div class="option-content-box-text">
+                <div class="leftover-button-container">
+                    <button href="#" id="leftover-button">What's in the fridge?</button>
+                </div>
+            </div>
+
+            <div class="option-content-box-text">
+                <label id="search">Search for ingredients: <br>
+                    <input class="search-box">
+                </label>
+            </div>
+
+<!--
+=======
         <a class="link" href="#scan">SCAN BILL</a>
         <p> or </p>
         <label id="search">Search for ingredients:
@@ -43,7 +69,11 @@
         <p> or </p>
         <div class="leftover-button-container">
             <button href="#" id="leftover-button">What's in the fridge?</button>
+>>>>>>> 621f00d1414b4b14a338aa97d7e9dd6a0aa5b4cd
+-->
         </div>
+
+
         <div id="bon-app-search-result">
         </div>
     </div>
