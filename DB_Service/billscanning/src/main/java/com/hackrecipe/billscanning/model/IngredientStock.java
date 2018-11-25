@@ -4,7 +4,7 @@ public class IngredientStock {
 
 	private int quantity;
 	private String text;
-	private String objectID;
+	private String objectIDFake;
 	
 	public IngredientStock() {
 	}
@@ -35,12 +35,12 @@ public class IngredientStock {
 	  return this;
 	}
 	
-	public String getObjectID() {
-	  return objectID;
+	public String getObjectIDFake() {
+	  return objectIDFake;
 	}
 	
-	public IngredientStock setObjectID(String objectID) {
-	  this.objectID = objectID;
+	public IngredientStock setObjectIDFake(String objectIDFake) {
+	  this.objectIDFake = objectIDFake;
 	  return this;
 	}
 

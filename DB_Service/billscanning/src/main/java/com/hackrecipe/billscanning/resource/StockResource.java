@@ -16,9 +16,10 @@ public class StockResource {
     @Autowired
     DB_Service db_service;
 
-    @RequestMapping(value = "/stcck", method = RequestMethod.GET)
+    @RequestMapping(value = "/stock", method = RequestMethod.GET)
     @ResponseBody
     public String getStock (){
+        db_service.updateStock();
         return db_service.getStock();
     }
 }
