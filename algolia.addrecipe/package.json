@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "angular-dev-server": "^0.2.0",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "start": "http-server"
+  }
+}
