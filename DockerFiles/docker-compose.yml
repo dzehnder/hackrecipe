@@ -1,0 +1,6 @@
+version: '3'
+services:
+    db_service:
+        build: ./DB_Service
+        ports:
+        - "5000:8080"
