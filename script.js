@@ -5,7 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
         apiKey: 'dcb2605958712d4d75acf4b30c6896d3',
         indexName: 'recipes',
     });
-      
+
+    const headers = new Headers();
+    headers.append('X-Algolia-API-Key', 'dcb2605958712d4d75acf4b30c6896d3');
+    headers.append('X-Algolia-Application-Id', 'ZV6V83N86C');
+
+    const STOCK_URL = 'https://ZV6V83N86C.algolia.net/1/indexes/stock/';
+
     search.addWidget({
         init: function(opts) {
             const helper = opts.helper;
@@ -15,8 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (whatsInTheFridgeElement) {
                 whatsInTheFridgeElement.addEventListener('click', function(e) {
-                    helper.setQuery('pepper kosher chicken').search();
-                    searchResultElement.style.display = "block";
+                    
+                    // 1. Fetch stock
+                    // 2. Query recipe database
+                    // 3. Show results
+
+                    fetch(STOCK_URL, {
+                        headers: headers
+                    }).then(function(response) {
+                        return response.json();
+                    }).then(function(results) {
+                        const stockAsText = results.hits.map(function(hit) {
+                            return hit.text;
+                        }).join(' ');
+
+                        helper.setQuery(stockAsText).search();
+                        searchResultElement.style.display = "block";
+                    });
                 });
             }
             if (searchForRecipesElement) {
