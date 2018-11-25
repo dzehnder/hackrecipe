@@ -32,6 +32,7 @@ public class Billscanning {
     public Map<String, Integer> ingredients = new HashMap<>();
 
     public Billscanning() {
+        /*
         ingredients.put("Whole Wheat Bread", 2);
         ingredients.put("Cereal", 1);
         ingredients.put("Kidney Beans", 3);
@@ -42,7 +43,7 @@ public class Billscanning {
         ingredients.put("Milk", 2);
         ingredients.put("Nonfat Yogurt", 2);
         ingredients.put("Olive Oil", 1);
-
+*/
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         URL json = classloader.getResource("dienst-code.json");
         try {
@@ -94,10 +95,8 @@ public class Billscanning {
 
             for (String ingredient : scannerHits) {
                 if (ingredient.matches(ingredientRegex)) {
-                    Matcher regexMatcher = regexPattern.matcher(ingredient);
-                    if (regexMatcher.find()) {
-                        regexMatcher.groupCount();
-                    }
+                    String[] amountAndIngredient = ingredient.split("(?<=[0-9])(?=.[a-zA-Z])");
+                    ingredients.put(amountAndIngredient[1], Integer.valueOf(amountAndIngredient[0]));
                 }
 
 
@@ -120,4 +119,9 @@ public class Billscanning {
             System.out.println(bucket.toString());
         }
     }
+
+    public Map<String, Integer> getIngredients() {
+        return ingredients;
+    }
+
 }
