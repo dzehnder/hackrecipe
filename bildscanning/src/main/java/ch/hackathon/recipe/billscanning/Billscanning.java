@@ -37,7 +37,7 @@ public class Billscanning {
             e.printStackTrace();
         }
 
-        URL receipt = classloader.getResource("receipt.jpg");
+        URL receipt = classloader.getResource(BillInput.RECEIPT_NAME);
 
         // Instantiates a client
         try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
