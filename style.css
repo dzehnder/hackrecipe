@@ -35,13 +35,14 @@ em {
 .option-content-box-text {
   color: black;
   border: 3px solid rgba(236 ,96, 88,0.4);
-  /*margin: 25%;*/
-  height: 5em;
+  padding: 2em;
+  height: 8em;
   width: 25%;
   text-align: center;
   display: inline-block;
   background-color: rgb(255,255,255); /* Fallback color */
   font-weight: bold;
+  margin: 1em 1em;
 }
 
 .bon-app-body {

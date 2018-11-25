@@ -135,6 +135,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     search.start();
 
+
+    document.querySelector('#scannerUpload').addEventListener('click', function(ev) {
+        ev.preventDefault();
+        fetch('http://localhost:8080/scanner').then(function(response) {
+            document.querySelector('#scannerUploadResult').style.display = "block";
+        });
+
+    });
+
 });
 
 

@@ -39,10 +39,18 @@
         <div id="">
 
             <div class="option-content-box-text">
-                <a class="scan" href="#">
-                    SCAN
-                    <!--<img src="images/scan.png">-->
-                </a>
+                SCAN
+                <form method="POST" enctype="multipart/form-data" action="http://localhost:8080/upload">
+                    <input type="button" id="ScanBill" value="Scan the bill" onclick="document.getElementById('file').click();" />
+                    <input type="file" accept="image/*;capture=camera" style="display:none;" id="file" name="file"/>
+                    <input id="scannerUpload" type="submit" value="Upload"/>
+                </form>
+            </div>
+
+            <div class="option-content-box-text">
+                <div class="leftover-button-container">
+                    <button href="#" id="leftover-button">What's in the fridge?</button>
+                </div>
             </div>
 
             <div class="option-content-box-text">
@@ -51,12 +59,6 @@
                 </label>
             </div>
 
-
-            <div class="option-content-box-text">
-            <div class="leftover-button-container">
-                <button href="#" id="leftover-button">What's in the fridge?</button>
-            </div>
-            </div>
 <!--
 =======
         <a class="link" href="#scan">SCAN BILL</a>
