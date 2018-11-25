@@ -9,15 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
     search.addWidget({
         init: function(opts) {
             const helper = opts.helper;
-            const input = document.querySelector('#search-box');
-            input.addEventListener('input', function(e) {
-                helper.setQuery(e.currentTarget.value).search();
-                if (document.getElementById("search-box").value != '') {
-                    document.getElementById("bon-app-search-result").style.display = "block";
-                } else {
-                    document.getElementById("bon-app-search-result").style.display = "none";
-                }
-            });
+            const searchForRecipesElement = document.querySelector('#search-box');
+            const whatsInTheFridgeElement = document.querySelector('#leftover-button');
+            const searchResultElement = document.querySelector("#bon-app-search-result");
+
+            if (whatsInTheFridgeElement) {
+                whatsInTheFridgeElement.addEventListener('click', function(e) {
+                    helper.setQuery('pepper kosher chicken').search();
+                    searchResultElement.style.display = "block";
+                });
+            }
+            if (searchForRecipesElement) {
+                searchForRecipesElement.addEventListener('input', function(e) {
+                    helper.setQuery(e.currentTarget.value).search();
+                    if (searchForRecipesElement.value != '') {
+                        searchResultElement.style.display = "block";
+                    } else {
+                        searchResultElement.style.display = "none";
+                    }
+                });
+            }
         }
     });
     
@@ -69,10 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }        
                 mystring += '</ul>';
                         }
-
-                
-                
-                
                 mystring += '<a href="' + h.recipeUrl + '">' + h.recipeUrl + '</a>';
                 
                 
