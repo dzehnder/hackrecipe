@@ -1,14 +1,18 @@
 package baselhack;
 
+import com.algolia.search.APIClient;
+import com.algolia.search.ApacheAPIClientBuilder;
+import com.algolia.search.Index;
+import com.algolia.search.exceptions.AlgoliaException;
+import com.algolia.search.objects.Query;
+import org.springframework.stereotype.Service;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import com.algolia.search.*;
-import com.algolia.search.exceptions.AlgoliaException;
-import com.algolia.search.objects.Query;
-
+@Service
 public class Main {
 
 	private static Map<String, Integer> ingredientMap = new HashMap<String, Integer>();
