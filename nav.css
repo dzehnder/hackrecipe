@@ -2,50 +2,23 @@
 body {
   margin: 0px;
 }
-nav {
-  padding: 24px;
-  text-align: center;
-  font-family: Roboto;
-  font-weight: 100;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-body, html {
-    height: 100%;
-}
+
 #bon-app-menu {
+  padding: 0.8em;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   background: rgb(236 ,96, 88) ;
   color: #ffffff;
   font-size: 20px;
   text-decoration: none;
-
 }
 
-.link {
-  color: #ffffff;
-  text-decoration: none;
-  transition: 0.3s ease;
-  background:rgb(236 ,96, 88);
-  border-top: 4px solid rgb(236 ,96, 88);
-  border-bottom: 4px solid rgb(236 ,96, 88);
-  padding: 20px 0;
-  margin: 0 20px;
-}
-
-.link:hover {
-  border-top: 4px solid #ffffff;
-  border-bottom: 4px solid #ffffff;
-  padding: 6px 0; 
-}
-
-/* The hero image */
 .bon-app-title-screen {
-      /* The image used */
-    background-image: url("images/ingredients_2.jpg");
+  background-image: url("images/ingredients_2.jpg");
 
 /* Add the blur effect */
 
   /* Full height */
-  height: 40%; 
+  height: 40%;
 
   /* Center and scale the image nicely */
   background-position: center;
