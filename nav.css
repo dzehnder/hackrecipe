@@ -36,7 +36,7 @@ body {
   height: 45%;
 }
 
-.bon-app-title-screen-package .bon-app-menu {
+.bon-app-title-screen-package .bon-app-menu-sticky {
   position: absolute;
   bottom: 0;
   z-index: 2;
@@ -76,6 +76,3 @@ body {
   text-align: center;
 }
 
-.bon-app-body {
-  height: 2000px;
-}

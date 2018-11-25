@@ -30,3 +30,21 @@ em {
   padding: 20px;
   text-align: center;
 }
+
+
+.option-content-box-text {
+  color: black;
+  border: 3px solid white;
+  /*margin: 25%;*/
+  height: 5em;
+  width: 25%;
+  text-align: center;
+  display: inline-block;
+  background-color: rgb(255,255,255); /* Fallback color */
+  font-weight: bold;
+}
+
+.bon-app-body {
+  height: 2000px;
+}
+
