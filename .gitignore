@@ -4,3 +4,4 @@
 .vscode
 target
 dienst-code.json
+node_modules
