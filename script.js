@@ -1,3 +1,5 @@
+var app = angular.module("hackrecipe", []); 
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const search = instantsearch({
