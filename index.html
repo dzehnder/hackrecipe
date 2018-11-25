@@ -7,44 +7,32 @@
     <title>Bon'app</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="leftover-button.css">
+    <link rel="stylesheet" href="search-results.css">
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
-    <script src="pizza.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-    <div id="bon-app-menu">      
-        <div id="bon-app-page-list">
-            <nav>
-                <label>Search for ingredients:
-                    <input id="search-box" />
-                </label>  
-              <a class="link" href="#home">Home</a>
-              <a class="link" href="#recipes">Recipes</a>
-              <a class="link" href="#scan">Scan Bill</a>
-              <a class="link" href="#about">About</a>
-            </nav>
-            <p> or </p>
-            <div class="round-button">
-                <div class="round-button-circle">
-                    <a href="http://example.com" class="round-button">Button!!</a>
-                </div>
-            </div>
+    <div class="bon-app-title-screen">
+        <div class="hero-text">
+            <h1>Bon App</h1>
+            <p>Smart use of your food</p>
         </div>
     </div>
-    <div id="bon-app-search-result">
+    <div id="bon-app-menu"></div>
+    <div class="bon-app-body">
+        <a class="link" href="#scan">SCAN BILL</a>
+        <p> or </p>
+        <label id="search">Search for ingredients:
+            <input id="search-box">
+        </label>
+        <p> or </p>
+        <div class="leftover-button-container">
+            <button href="#" id="leftover-button">What's in the fridge?</button>
+        </div>
+        <div id="bon-app-search-result">
+        </div>
     </div>
-
-    <canvas id="pizza"></canvas>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const pizza = new PizzaAnimation('pizza');
-
-        (function update() {
-        requestAnimationFrame(update);
-        pizza.update();
-        }())
-    });
-    </script>
     
 </body>
 </html>

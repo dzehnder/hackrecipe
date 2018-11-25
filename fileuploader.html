@@ -1,0 +1,5 @@
+<form method="POST" enctype="multipart/form-data" action="http://localhost:8080/upload">
+	<input type="button" id="ScanBill" value="Scan the bill" onclick="document.getElementById('file').click();" />
+	<input type="file" accept="image/*;capture=camera" style="display:none;" id="file" name="file"/>
+	<input type="submit" value="Upload"/>
+</form>

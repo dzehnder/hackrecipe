@@ -2,6 +2,7 @@
 body {
   margin: 0px;
 }
+<<<<<<< HEAD
 nav {
   padding: 24px;
   text-align: center;
@@ -13,10 +14,17 @@ body, html {
     height: 100%;
 }
 .bon-app-menu {
+=======
+
+#bon-app-menu {
+  padding: 0.8em;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+>>>>>>> ff890c7aa9d69aa29727d5a1230a8642a991db18
   background: rgb(236 ,96, 88) ;
   color: #ffffff;
   font-size: 20px;
   text-decoration: none;
+<<<<<<< HEAD
   width: 100%;
   position: fixed;
   bottom: auto;
@@ -45,18 +53,12 @@ body, html {
   border-bottom: 4px solid rgb(236 ,96, 88);
   padding: 20px 0;
   margin: 0 20px;
+=======
+>>>>>>> ff890c7aa9d69aa29727d5a1230a8642a991db18
 }
 
-.link:hover {
-  border-top: 4px solid #ffffff;
-  border-bottom: 4px solid #ffffff;
-  padding: 6px 0; 
-}
-
-/* The hero image */
 .bon-app-title-screen {
-      /* The image used */
-    background-image: url("images/ingredients_2.jpg");
+  background-image: url("images/ingredients_2.jpg");
 
 /* Add the blur effect */
 
@@ -87,7 +89,10 @@ body, html {
   padding: 20px;
   text-align: center;
 }
+<<<<<<< HEAD
 
 .bon-app-body {
   height: 2000px;
 }
+=======
+>>>>>>> ff890c7aa9d69aa29727d5a1230a8642a991db18
