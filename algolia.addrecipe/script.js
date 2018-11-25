@@ -11,7 +11,7 @@ app.controller("myCtrl", function($scope, $http) {
         // clear recipes list:
         $scope.recipes = [];
 
-        var url = 'https://api.edamam.com/search?app_id=6c5d59a0&app_key=8b5bc454bf95e550121ead8d8e981d88&from=0&to=10'
+        var url = 'https://api.edamam.com/search?app_id=6c5d59a0&app_key=8b5bc454bf95e550121ead8d8e981d88&from=0&to=5'
         url += '&q=' + $scope.ingridents
 
         $http
@@ -23,7 +23,27 @@ app.controller("myCtrl", function($scope, $http) {
     }
 
     $scope.addRecipeToAlgolia = function (recipe) {
-        
-        alert("TODO: " + recipe.label);
+
+        // ApiCredentials:
+        var client = algoliasearch('ZV6V83N86C', '46ce68dc64abc23969dd37096bd5268e');
+
+        // Transform API-Model from edamam to API-Model of Algolia:
+        var algoliaRecipe = {
+            "name": recipe.label,
+            "healthLabels": recipe.healthLabels,
+            "ingredients": recipe.ingredientLines,
+            "recipeUrl": recipe.url,
+            "imageUrl": recipe.image
+        };
+
+        // Send recipe to Algolia:
+        var index = client.initIndex('recipes');
+        index.addObject(algoliaRecipe, function(err, content) {
+            if (err) {
+                alert("Error occured: " + err)
+            } else {
+                alert("Recipe added!");
+            }
+        });
     }
 });
