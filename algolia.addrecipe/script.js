@@ -11,7 +11,7 @@ app.controller("myCtrl", function($scope, $http) {
         // clear recipes list:
         $scope.recipes = [];
 
-        var url = 'https://api.edamam.com/search?app_id=6c5d59a0&app_key=8b5bc454bf95e550121ead8d8e981d88&from=0&to=5'
+        var url = 'https://api.edamam.com/search?app_id=6c5d59a0&app_key=8b5bc454bf95e550121ead8d8e981d88&from=0&to=10'
         url += '&q=' + $scope.ingridents
 
         $http

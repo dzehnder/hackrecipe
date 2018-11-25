@@ -14,8 +14,10 @@
   <header>
     <h3>Add Recipes to Algolia</h3>
     <div>
-        <input placeholder="Add ingridents here" ng-model="ingridents">
-        <button ng-click="search()">Search</button>
+        <form>
+            <input placeholder="Search by ingridents" ng-model="ingridents">
+            <input type="submit" ng-click="search()" value="Search" />
+        </form>
     </div>
   </header>
   <div>
@@ -24,7 +26,7 @@
         <a href="{{ x.recipe.url }}" target="_blank">{{ x.recipe.label }}</a>
         <button ng-click="addRecipeToAlgolia(x.recipe)" style="cursor:pointer;">add</button>
         <br /><br />
-        <img src="{{ x.recipe.image }}" />
+        <img ng-src="{{ x.recipe.image }}" />
 
         <ul>            
             <li ng-repeat="i in x.recipe.ingredientLines">{{ i }}</li>

@@ -1,3 +1,5 @@
+var app = angular.module("hackrecipe", []); 
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const search = instantsearch({
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 var instock = [];
                 for (var index = 0; index < h._highlightResult.ingredients.length; index++) {
-                    if(h._highlightResult.ingredients[index].matchedWords != "none") {
+                    if(h._highlightResult.ingredients[index].matchLevel != "none") {
                             instock.push(h._highlightResult.ingredients[index].value);        
                         }
                         }    
@@ -92,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 var tobuy = [];
                 for (var index = 0; index < h._highlightResult.ingredients.length; index++) {
-                    if(h._highlightResult.ingredients[index].matchedWords == "none") {
+                    if(h._highlightResult.ingredients[index].matchLevel == "none") {
                             tobuy.push(h._highlightResult.ingredients[index].value);        
                     }
                         }    
